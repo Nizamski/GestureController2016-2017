@@ -1,13 +1,15 @@
-﻿#pragma strict
+#pragma strict
 
 var apple : GameObject;
+var spawner_1 : GameObject;
+var spawner_2 : GameObject;
+var spawner_3 : GameObject;
+var spawner_4 : GameObject;
+var spawner_5 : GameObject; 
 
 function Start () {
 
-	InvokeRepeating("Spawn", 7, 7);
-	InvokeRepeating("Spawn2", 3, 3);
-	InvokeRepeating("Spawn3", 9, 9);
-	InvokeRepeating("Spawn4", 5, 5);
+	InvokeRepeating("Spawn", 3, 3);
 }
 
 function Update () {
@@ -16,26 +18,21 @@ function Update () {
 
 function Spawn() {
 
-	Instantiate (apple, Vector3(transform.position.x,transform.position.y, transform.position.z) , Quaternion.identity);
-}
+	var random = Random.Range(1,6);
 
-function Spawn2() {
-
-	Instantiate (apple, 
-	Vector3(transform.position.x - 1,transform.position.y + 1, transform.position.z) ,
-	Quaternion.identity);
-}
-
-function Spawn3() {
-
-	Instantiate (apple, 
-	Vector3(transform.position.x - 1,transform.position.y - 3, transform.position.z) ,
-	Quaternion.identity);
-}
-
-function Spawn4() {
-
-	Instantiate (apple, 
-	Vector3(transform.position.x,transform.position.y - 2, transform.position.z) ,
-	Quaternion.identity);
+	if (random == 1) {
+		Instantiate (apple, Vector3(spawner_1.transform.position.x, spawner_1.transform.position.y, spawner_1.transform.position.z) , Quaternion.identity);
+	}
+	else if (random == 2) {
+		Instantiate (apple, Vector3(spawner_2.transform.position.x, spawner_2.transform.position.y, spawner_2.transform.position.z) , Quaternion.identity);
+	}
+	else if (random == 3) {
+		Instantiate (apple, Vector3(spawner_3.transform.position.x, spawner_3.transform.position.y, spawner_3.transform.position.z) , Quaternion.identity);
+	}
+	else if (random == 4) {
+		Instantiate (apple, Vector3(spawner_4.transform.position.x, spawner_4.transform.position.y, spawner_4.transform.position.z) , Quaternion.identity);
+	}
+	else {
+		Instantiate (apple, Vector3(spawner_5.transform.position.x, spawner_5.transform.position.y, spawner_5.transform.position.z) , Quaternion.identity);
+	}
 }
