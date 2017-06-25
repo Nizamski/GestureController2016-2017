@@ -30,7 +30,7 @@ public class Main {
 		
 		serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
 		int xCoord = 0;
-	    int yCoord = 0;
+	    	int yCoord = 0;
 		
 		Scanner data = new Scanner(serialPort.getInputStream());
 		
